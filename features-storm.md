@@ -3,7 +3,8 @@
 Sistema para agregar e organizar os cuidadores de praças
 
 - Login social
-- Envio de mensagens (notificações)
+- Envio de mensagens (notificações) sobre a praça adotada
+  - "o cuidador fulano marcou uma ação na praça X dia tal. Venha também!" 
 - Mapa com a localização das praças
 - Entrar para o time de cuidadores de uma determinada praça
 - Ver os cuidadores de uma praça
