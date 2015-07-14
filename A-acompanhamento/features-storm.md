@@ -1,7 +1,7 @@
 # Adote uma praça #
-
 Sistema para agregar e organizar os cuidadores de praças
 
+## Requisitos funcionais ##
 - Login social
 - Envio de mensagens (notificações) sobre a praça adotada
   - "o cuidador fulano marcou uma ação na praça X dia tal. Venha também!" 
@@ -12,5 +12,9 @@ Sistema para agregar e organizar os cuidadores de praças
 - Cadastrar as praças
   - Fotografar as praças
   - História da praça
-  - Data da última ação feita na praça 
+  - Data da última ação feita na praça
+
+## Requisitos não-funcionais ##   
+- Publicar no heroku ou outro serviço free com suporte a node
+- NodeJS + ExpressJS
 
