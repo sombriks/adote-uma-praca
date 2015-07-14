@@ -17,4 +17,8 @@ Sistema para agregar e organizar os cuidadores de praças
 ## Requisitos não-funcionais ##   
 - Publicar no heroku ou outro serviço free com suporte a node
 - NodeJS + ExpressJS
-
+- O esquema de pesos pra usar ao mensurar prazos é:
+  - 1 dia para a atividade mais simples
+  - 6 dias para a atividade mais complexa
+  - A escala é de 1 a 6
+ 
