@@ -9,6 +9,6 @@ Sistema para agregar e organizar os cuidadores de praças
 - Ver os cuidadores de uma praça
 - Um cuidador pode subir fotos de uma ação naquela praça
 - Cadastrar as praças
--- Fotografar as praças
--- História da praça
+  - Fotografar as praças
+  - História da praça
 
