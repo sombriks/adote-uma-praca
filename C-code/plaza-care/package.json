@@ -1,20 +1,12 @@
 {
   "name": "plaza-care",
-  "version": "1.0.0",
-  "description": "Sistema para integrar os cuidadores de praças",
-  "main": "index.js",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "keywords": [
-    "ong",
-    "praça",
-    "plaza",
-    "squaregarden"
-  ],
-  "author": "sombriks@gmail.com, soaresyuri@gmail.com",
-  "license": "MIT",
   "dependencies": {
-    "express": "^4.13.1"
+    "express": "3.2.6",
+    "jade": "*"
   }
 }
