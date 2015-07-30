@@ -1,0 +1,1 @@
+-- sudo createdb -U postgres plaza-care
