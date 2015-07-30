@@ -37,7 +37,7 @@
 	 
 	"bitwise" : true, // Prohibit bitwise operators (&, |, ^, etc.).
 	"curly" : true, // Require {} for every new block or scope.
-	"eqeqeq" : true, // Require triple equals i.e. `===`.
+//	"eqeqeq" : true, // Require triple equals i.e. `===`.
 	"forin" : true, // Tolerate `for in` loops without `hasOwnPrototype`.
 	"immed" : true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
 	"latedef" : true, // Prohibit variable use before definition.
