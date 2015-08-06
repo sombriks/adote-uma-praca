@@ -1,0 +1,21 @@
+{
+  "name": "plaza-care",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sombriks/adote-uma-praca",
+  "authors": [
+    "sombriks <sombriks@gmail.com>"
+  ],
+  "description": "app to socialize plaza caretakers",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
