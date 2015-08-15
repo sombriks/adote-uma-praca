@@ -1,6 +1,6 @@
 # Projeto  AUP - Adote Uma Praça
 
-* instale o atom
+* instale o atom https://atom.io/
 * sudo dnf install node npm postgresql-server
 * sudo service postgresql start
 * sudo su postgres
@@ -16,8 +16,9 @@
 * cd public
 * bower init
 * bower install angular-ui-router angular-bootstrap --save
+* *em construção*
 
 O avião estará no ar pouco depois disso. só configurar o knex para este banco.
 
 O projeto tem um lado servidor e um lado cliente. O lado cliente fica dentro
-da pasta *public*.
+da pasta **public**.
