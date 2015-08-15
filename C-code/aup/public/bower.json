@@ -1,0 +1,23 @@
+{
+  "name": "aup",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sombriks/adote-uma-praca",
+  "authors": [
+    "sombriks <sombriks@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.13.3"
+  }
+}
