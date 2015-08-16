@@ -18,6 +18,9 @@
       <!-- app entry point -->
       <link rel="stylesheet" href="stylesheets/style.css"/>
       <script type="text/javascript" src="javascripts/aup.js"></script>
+      <script type="text/javascript" src="javascripts/LoginService.js"></script>
+      <script type="text/javascript" src="javascripts/aupfacebook.js"></script>
+      <script type="text/javascript" src="javascripts/TelaPrincipalController.js"></script>
   </head>
   <body>
       <div class="container" data-ng-controller="TelaPrincipalController">
@@ -59,7 +62,9 @@
               <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <button class="loginfb" data-ng-click="loginFB()">Facebook</button>
+                        <a class="loginfb" data-ng-click="loginFB()">
+                            <img alt="Login Facebook" src="images/loginfb.jpg"/>
+                        </a>
                     </div>
                 </div>
               </div>
