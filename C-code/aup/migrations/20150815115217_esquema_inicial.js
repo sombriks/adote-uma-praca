@@ -4,20 +4,20 @@
 exports.up = function(knex, Promise) {
   /*create table cuidador (
       idcuidador serial,
-      email varchar(255) not null,
+      email varchar(255) unique,
       nomecuidador varchar(255) not null,
       membrodesde date default now(),
-      linkfacebook varchar(255) not null,
-      chaveacesso varchar(255) not null,
+      idfacebook varchar(255) not null,
+      chaveacessofb varchar(255) not null,
       primary key (idcuidador)
   );*/
   return knex.schema.createTable('cuidador', function (table) {
     table.increments('idcuidador');
-    table.string('email').unique().notNullable();
+    table.string('email').unique();
     table.string('nomecuidador').notNullable();
     table.date('membrodesde').defaultTo(knex.raw('now()'));
-    table.string('linkfacebook').notNullable();
-    table.string('chaveacesso').notNullable();
+    table.string('idfacebook').notNullable();
+    table.string('chaveacessofb').notNullable();
   })
   /*create table plaza (
       idplaza serial,

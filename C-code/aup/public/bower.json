@@ -18,6 +18,9 @@
   ],
   "dependencies": {
     "angular-ui-router": "~0.2.15",
-    "angular-bootstrap": "~0.13.3"
+    "angular-bootstrap": "~0.13.3",
+    "bootstrap": "~3.3.5",
+    "angular-ui-map": "~0.5.0",
+    "angular-facebook": "~0.2.3"
   }
 }
