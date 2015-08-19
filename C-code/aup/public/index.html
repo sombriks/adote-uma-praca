@@ -13,14 +13,14 @@
       <script type="text/javascript" src="bower_components/angular-ui-utils/ui-utils.min.js"></script>
       <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
       <script type="text/javascript" src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
-      <script type="text/javascript" src="bower_components/angular-ui-map/ui-map.min.js"></script>
-      <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?callback=map_api_loaded&key=AIzaSyADAQ8IUnHOQqenOMKy6HhMFhPZr1Kmocs"></script>
       <!-- app entry point -->
       <link rel="stylesheet" href="stylesheets/style.css"/>
       <script type="text/javascript" src="javascripts/aup.js"></script>
       <script type="text/javascript" src="javascripts/services/login.js"></script>
       <script type="text/javascript" src="javascripts/services/aupfacebook.js"></script>
       <script type="text/javascript" src="javascripts/controllers/telaprincipal.js"></script>
+      <script type="text/javascript" src="javascripts/states/listaprc.js"></script>
+      <script type="text/javascript" src="javascripts/states/mapa.js"></script>
   </head>
   <body>
       <div class="container" data-ng-controller="TelaPrincipalController">
@@ -43,7 +43,6 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listas <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="#/listaprc">Praças</a></li>
-                      <li><a href="#/listacuidador">Cuidadores</a></li>
                       <li><a href="#/listaacoes">Ações agendadas</a></li>
                     </ul>
                   </li>
@@ -89,7 +88,7 @@
                     </div>
 					<div class="col-xs-12 text-center">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="#/mapa">Mapa de praças</a></li>
+                            <li class="list-group-item"><a href="mapa.html">Mapa de praças</a></li>
                         </ul>
 						<div class="btn-group">
 						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -97,7 +96,7 @@
 						  </button>
 						  <ul class="dropdown-menu">
 		                      <li><a href="#/listaprc">Praças</a></li>
-		                      <li><a href="#/listacuidador">Cuidadores</a></li>
+
 		                      <li><a href="#/listaacoes">Ações agendadas</a></li>
 						  </ul>
 						</div>
@@ -108,7 +107,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-8 col-md-9">
-            <div data-ng-view></div>
+            <div data-ui-view></div>
           </div>
         </div>
       </div>

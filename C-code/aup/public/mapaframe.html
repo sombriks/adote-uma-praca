@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Projeto Adote Uma Praça</title>
+      <!-- base styles -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+      <!-- base scripts -->
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+      <script type="text/javascript" src="bower_components/angular-ui-utils/ui-utils.min.js"></script>
+      <script type="text/javascript" src="bower_components/angular-ui-map/ui-map.min.js"></script>
+      <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?callback=map_api_loaded&key=AIzaSyADAQ8IUnHOQqenOMKy6HhMFhPZr1Kmocs"></script>
+      <!-- app entry point -->
+      <link rel="stylesheet" href="stylesheets/style.css"/>
+      <script type="text/javascript">
+        angular.module("aupmap",['ui.map']);
+        angular.module("aupmap").controller("MapCtrl",function($scope){
+            $scope.mapOptions={
+                center: new google.maps.LatLng(35.784, -78.670),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                zoom: 15
+            };
+        });
+        function map_api_loaded(){
+            console.debug("- api loaded -");
+            angular.bootstrap(document.getElementById("map"), ['aupmap']);
+        }
+      </script>
+  </head>
+  <body class="container-fluid">
+      <div class="row">
+          <div class="col-xs-3">
+              <button class="btn btn-info">A</button>
+          </div>
+          <div class="col-xs-3">
+              <button class="btn btn-info">A</button>
+          </div>
+          <div class="col-xs-3 text-right">
+              <button class="btn btn-info">A</button>
+          </div>
+          <div class="col-xs-3 text-right">
+              <button class="btn btn-info">A</button>
+          </div>
+      </div>
+      <section id="map" ng-controller="MapCtrl" class="row">
+          <div class="col-xs-12">
+              <div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>
+          </div>
+      </section>
+  </body>
+</html>
