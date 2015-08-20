@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var url = require('url');
 
 module.exports = function(knex) {
-
+	// login
 	router.post("/login", function(req, res) {
 		var cuidador = req.body;
 		knex("cuidador").select().where({
@@ -23,6 +24,18 @@ module.exports = function(knex) {
 			}
 		});
 	});
+	// lista de praças
+	router.get("/plaza/list",function(req,res){
+		var q = url.parse(req.url).query;
+		console.log(q.lat);
+		console.log(q.lng);
+		console.log(q.r);
 
+		knex("plaza").select().where({
+
+		}).then(function(result){
+			res.json(result);
+		});
+	});
 	return router;
 };

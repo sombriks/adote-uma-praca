@@ -12,42 +12,59 @@
       <script type="text/javascript" src="bower_components/angular-ui-utils/ui-utils.min.js"></script>
       <script type="text/javascript" src="bower_components/angular-ui-map/ui-map.min.js"></script>
       <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?callback=map_api_loaded&key=AIzaSyADAQ8IUnHOQqenOMKy6HhMFhPZr1Kmocs"></script>
-      <!-- app entry point -->
       <link rel="stylesheet" href="stylesheets/style.css"/>
+      <!-- app entry point -->
       <script type="text/javascript">
         angular.module("aupmap",['ui.map']);
         angular.module("aupmap").controller("MapCtrl",function($scope){
             $scope.mapOptions={
-                center: new google.maps.LatLng(35.784, -78.670),
+                center: new google.maps.LatLng(-3.7421043, -38.5375617),
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                zoom: 15
+                zoom: 18
             };
+            $scope.plazamarkers=[];
+            $scope.eventmarkers=[];
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(p){
+                    // console.debug("posição recuperada");
+                    // console.debug(p.coords);
+                    var lt = p.coords.latitude;
+                    var lg = p.coords.longitude;
+                    var latlong = new google.maps.LatLng(lt, lg);
+                    $scope.plazamap.panTo(latlong);
+                    // marcando a localização do cuidador
+                    $scope.cuidadormarker = //
+                    new google.maps.Marker({
+                        map:$scope.plazamap,
+                        position:latlong
+                    });
+                });
+            }
         });
+        // carregamos o angular manualmente aqui
         function map_api_loaded(){
             console.debug("- api loaded -");
             angular.bootstrap(document.getElementById("map"), ['aupmap']);
+            // // Create the search box and link it to the UI element.
+            // var input = document.getElementById('pac-input');
+            // var searchBox = new google.maps.places.SearchBox(input);
+            // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+            //
+            // // Bias the SearchBox results towards current map's viewport.
+            // map.addListener('bounds_changed', function() {
+            //     searchBox.setBounds(map.getBounds());
+            // });
         }
       </script>
   </head>
-  <body class="container-fluid">
-      <div class="row">
-          <div class="col-xs-3">
-              <button class="btn btn-info">A</button>
-          </div>
-          <div class="col-xs-3">
-              <button class="btn btn-info">A</button>
-          </div>
-          <div class="col-xs-3 text-right">
-              <button class="btn btn-info">A</button>
-          </div>
-          <div class="col-xs-3 text-right">
-              <button class="btn btn-info">A</button>
-          </div>
-      </div>
-      <section id="map" ng-controller="MapCtrl" class="row">
+  <body id="map" class="container-fluid">
+      <section data-ng-controller="MapCtrl" class="row">
           <div class="col-xs-12">
-              <div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>
+              <div class="map-canvas"
+              data-ui-map="plazamap"
+              data-ui-options="mapOptions"></div>
           </div>
+          <!-- <input id="pac-input"/> -->
       </section>
   </body>
 </html>
