@@ -3,4 +3,4 @@
 /*
  * declaração do módulo do aplicativo e suas dependências
  */
-angular.module("aup", ['ui.bootstrap', 'ui.router', 'facebook']);
+angular.module("aup", ['ui.bootstrap', 'ui.router', 'uiGmapgoogle-maps', 'facebook']);
