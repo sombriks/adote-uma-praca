@@ -1,5 +1,5 @@
 # Projeto  AUP - Adote Uma Praça
-
+Se for começar do zero:
 * instale o atom https://atom.io/
 * sudo dnf install node npm postgresql-server
 * sudo service postgresql start
