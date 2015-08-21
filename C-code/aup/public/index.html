@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html data-ng-app="aup">
-  <head>
-      <title>Projeto Adote Uma Praça</title>
-      <!-- base styles -->
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
-      <!-- base scripts -->
-      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-      <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-      <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-      <script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
-      <script type="text/javascript" src="bower_components/angular-ui-utils/ui-utils.min.js"></script>
-      <script type="text/javascript" src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
-      <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-      <script type="text/javascript" src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
-      <!-- app entry point -->
-      <link rel="stylesheet" href="stylesheets/style.css"/>
-      <script type="text/javascript" src="javascripts/aup.js"></script>
-      <script type="text/javascript" src="javascripts/services/login.js"></script>
-      <script type="text/javascript" src="javascripts/services/aupfacebook.js"></script>
-      <script type="text/javascript" src="javascripts/services/plazas.js"></script>
-      <script type="text/javascript" src="javascripts/controllers/telaprincipal.js"></script>
-      <script type="text/javascript" src="javascripts/states/listaprc.js"></script>
-      <script type="text/javascript" src="javascripts/states/mapa.js"></script>
-  </head>
+    <head>
+        <title>Projeto Adote Uma Praça</title>
+        <!-- base styles -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+        <!-- base scripts -->
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
+        <!-- leaflet -->
+        <script src="bower_components/leaflet/dist/leaflet.js"></script>
+        <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+        <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+        <!-- app entry point -->
+        <link rel="stylesheet" href="stylesheets/style.css"/>
+        <script type="text/javascript" src="javascripts/aup.js"></script>
+        <script type="text/javascript" src="javascripts/services/login.js"></script>
+        <script type="text/javascript" src="javascripts/services/aupfacebook.js"></script>
+        <script type="text/javascript" src="javascripts/services/plazas.js"></script>
+        <script type="text/javascript" src="javascripts/controllers/telaprincipal.js"></script>
+        <script type="text/javascript" src="javascripts/states/listaprc.js"></script>
+        <script type="text/javascript" src="javascripts/states/mapa.js"></script>
+    </head>
   <body>
       <div class="container" data-ng-controller="TelaPrincipalController">
         <div class="row">

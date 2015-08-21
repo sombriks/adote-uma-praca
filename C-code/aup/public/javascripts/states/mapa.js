@@ -1,13 +1,5 @@
 // controle e roteamento da tela com mapa
-angular.module("aup")//
-.config(function(uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-           key: 'AIzaSyADAQ8IUnHOQqenOMKy6HhMFhPZr1Kmocs',
-        v: '3.17',
-        libraries: 'weather,geometry,visualization'
-    });
-})
-.config(function($stateProvider,$urlRouterProvider){
+angular.module("aup").config(function($stateProvider,$urlRouterProvider){
     // o mapa é também nossa tela inicial
     // $urlRouterProvider.when("","/mapa");
     $urlRouterProvider.otherwise("/mapa");
@@ -16,9 +8,16 @@ angular.module("aup")//
         name:"mapa",
         url:"/mapa",
         templateUrl:"views/mapa.html",
-        controller:function($scope,uiGmapGoogleMapApi) {
-            $scope.vepraca = function(){
+        controller:function($scope) {
 
+            $scope.orig={
+                lat:-3.7426492,
+                lng:-38.5374927,
+                zoom:18
+            };
+
+            $scope.vepraca = function(){
+                $scope.orig.lat-=0.001;
             };
             $scope.veracao = function(){
 
@@ -29,10 +28,6 @@ angular.module("aup")//
             $scope.agendacao = function(){
 
             };
-            $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 18 };
-            uiGmapGoogleMapApi.then(function(maps){
-
-            });
         }
     });
 });
