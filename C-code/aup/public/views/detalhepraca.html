@@ -2,16 +2,16 @@
     <div class="col-xs-12">
         <div class="form-group">
             <label for="np">Nome da praça</label>
-            <input id="np" class="form-control" data-ng-model="plaza.nomeplaza"/>
+            <input id="np" class="form-control" data-ng-model="plaza.nomeplaza" placeholder="Dê um nome para esta praça"/>
         </div>
     </div>
     <div class="col-xs-6">
-        <leaflet center="plaza" markers="markers" width="100%" height="300px"></leaflet>
+        <leaflet center="plaza" markers="markers" events="plaza" width="100%" height="300px"></leaflet>
     </div>
     <div class="col-xs-6">
         <div class="form-group">
             <label for="dp">Descrição da praça</label>
-            <textarea id="dp" rows="13" class="form-control"></textarea>
+            <textarea id="dp" rows="13" class="form-control" placeholder="Fale um pouco da história desta praça"></textarea>
         </div>
     </div>
     <div class="col-xs-12">
