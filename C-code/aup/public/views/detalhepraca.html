@@ -6,12 +6,12 @@
         </div>
     </div>
     <div class="col-xs-6">
-        <leaflet center="plaza" markers="markers" events="plaza" width="100%" height="300px"></leaflet>
+        <leaflet center="plaza" markers="markers" width="100%" height="300px"></leaflet>
     </div>
     <div class="col-xs-6">
         <div class="form-group">
             <label for="dp">Descrição da praça</label>
-            <textarea id="dp" rows="13" class="form-control" placeholder="Fale um pouco da história desta praça"></textarea>
+            <textarea id="dp" rows="13" class="form-control" data-ng-model="plaza.descricaoplaza" placeholder="Fale um pouco da história desta praça"></textarea>
         </div>
     </div>
     <div class="col-xs-12">
@@ -19,6 +19,6 @@
         <button class="btn btn-success" data-ng-click="vercuidadores()">Ver cuidadores</button>
     </div>
     <div class="col-xs-12 text-right">
-        <button class="btn btn-primary" data-ng-click="savar()">Salvar</button>
+        <button class="btn btn-primary" data-ng-click="salvar()">Salvar</button>
     </div>
 </div>

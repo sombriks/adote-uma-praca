@@ -29,7 +29,7 @@ app.use(cookieParser());
 // primeiro tente os recursos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 // tente os dinâmicos agora
-app.use('/', require('./routes/index')(knex));
+app.use('/', require('./routes/aup')(knex));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
