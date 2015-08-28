@@ -12,9 +12,11 @@ var app = express();
 
 // knex
 var knexfile = require('./knexfile');
-var kcfg = app.get('env') == //
-'development' ? knexfile.development : knexfile.production
+// figuring environment
+var kcfg = typeof process.env.OPENSHIFT_CLOUD_DOMAIN == "undefined" ? //
+	knexfile.development : knexfile.production
 var knex = require('knex')(kcfg); // call config just once
+// call migrate magic
 knex.migrate.latest();
 
 // uncomment after placing your favicon in /public

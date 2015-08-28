@@ -36,11 +36,7 @@ module.exports = {
 
 	production : {
 		client : 'postgresql',
-		connection : {
-			database : 'plazacare',
-			user : 'postgres',
-			password : 'postgres'
-		},
+		connection : process.env.OPENSHIFT_POSTGRESQL_DB_URL,
 		pool : {
 			min : 2,
 			max : 10
