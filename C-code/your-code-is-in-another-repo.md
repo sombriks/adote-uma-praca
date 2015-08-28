@@ -1,5 +1,5 @@
 since i didn't found the lesser evil (TM),
-we'll maintains two git repos.
+we'll maintain two git repos.
 
 see https://openshift.redhat.com/app/console/application/55df576489f5cffa47000207-aup
 
