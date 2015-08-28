@@ -9,7 +9,7 @@ see https://openshift.redhat.com/app/console/application/55df576489f5cffa4700020
 
 
 
-* when the code enter in freeze we'll bring it back. hope so. *
+*when the code enter in freeze we'll bring it back. hope so.*
 
 
 ssh://55df576489f5cffa47000207@aup-adoptaplaza.rhcloud.com/~/git/aup.git/
