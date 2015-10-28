@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-5">
+                        Lista das praças cadastradas
+                </div>
+                <div class="col-xs-7 text-right">
+                    <a class="btn btn-success" data-ng-show="cuidador"
+                        data-ng-href="#/detalhepraca">Nova praça</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row" data-ng-repeat="plz in plazas">
+                <div class="col-xs-6">
+                    <label>{{plz.nomeplaza}}</label>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <a class="btn btn-warning" data-ng-href="#/detalhepraca/{{plz.idplaza}}">
+                        <i class="fa fa-edit" data-ng-show="cuidador"></i>
+                        <i class="fa fa-eye" data-ng-show="!cuidador"></i>
+                    </a>
+                    <a class="btn btn-danger" data-ng-show="cuidador">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </div>
+                <div class="col-xs-12">
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

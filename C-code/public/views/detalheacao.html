@@ -1,0 +1,48 @@
+<div class="row" data-ng-show="cuidador">
+  <div class="col-xs-12" style="z-index:999">
+    <md-autocomplete md-selected-item="plazaac"
+      md-search-text="nomeplaza"
+      md-items="plazaac in findplazas(nomeplaza)"
+      md-item-text="plazaac.nomeplaza"
+      md-selected-item-change="mudaposmapa(plazaac)"
+      md-floating-label="Praça deste evento/ação">
+      <span md-highlight-text="searchText">{{plazaac.nomeplaza}}</span>
+    </md-autocomplete>
+  </div>
+  <div class="col-xs-6">
+        <leaflet center="plazamap" markers="markers" defaults="defaults"
+            width="100%" height="300px"></leaflet>
+  </div>
+  <div class="col-xs-6">
+    <div class="form-group">
+      <label for="tituloevento">Título/Resumo do evento</label>
+      <input class="form-control" id="tituloevento" tabindex="2" ng-model="evento.tituloevento"/>
+    </div>
+    <div class="form-group">
+      <label for="dscevento">Descrição do evento</label>
+      <textarea class="form-control" id="dscevento" tabindex="3" ng-model="evento.dscevento" rows="9"></textarea>
+    </div>
+  </div>
+  <div class="col-xs-6 form-group">
+      <label for="dtinicioevento">Início do evento</label>
+      <div class="form-inline">
+        <input type="date" class="form-control"
+          id="dtinicioevento" ng-model="evento.dtinicioevento">
+        <input type="time" class="form-control"
+        id="dtinicioevento1"  ng-model="evento.dtinicioevento">
+      </div>
+  </div>
+  <div class="col-xs-6 form-group">
+      <label for="dtfimevento">Fim do evento</label>
+      <div class="form-inline">
+        <input type="date" class="form-control"
+          id="dtfimevento" ng-model="evento.dtfimevento">
+        <input type="time" class="form-control"
+          id="dtfimevento1" ng-model="evento.dtfimevento">
+      </div>
+  </div>
+  <div class="col-xs-12 text-right">
+    <button class="btn btn-primary" tabindex="4" data-ng-show="cuidador"
+      data-ng-click="salvar()">Salvar</button>
+  </div>
+</div>

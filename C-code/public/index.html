@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html data-ng-app="aup" lang="pt-BR">
+<head>
+  <title>Projeto Adote Uma Praça</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- base styles -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css" type="text/css" media="all"/>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css" type="text/css" media="all"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- base scripts -->
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
+  <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+
+  <!-- leaflet -->
+  <script src="bower_components/leaflet/dist/leaflet.js"></script>
+  <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+  <!-- app entry point -->
+  <link rel="stylesheet" href="stylesheets/style.css"/>
+  <script type="text/javascript" src="javascripts/aup.js"></script>
+  <script type="text/javascript" src="javascripts/controllers/telaprincipal.js"></script>
+  <script type="text/javascript" src="javascripts/services/acoessvc.js"></script>
+  <script type="text/javascript" src="javascripts/services/aupfacebook.js"></script>
+  <script type="text/javascript" src="javascripts/services/cuidadorsvc.js"></script>
+  <script type="text/javascript" src="javascripts/services/login.js"></script>
+  <script type="text/javascript" src="javascripts/services/plazas.js"></script>
+  <script type="text/javascript" src="javascripts/states/cuidador.js"></script>
+  <script type="text/javascript" src="javascripts/states/detalheacao.js"></script>
+  <script type="text/javascript" src="javascripts/states/detalhepraca.js"></script>
+  <script type="text/javascript" src="javascripts/states/listact.js"></script>
+  <script type="text/javascript" src="javascripts/states/listacuidadorpraca.js"></script>
+  <script type="text/javascript" src="javascripts/states/listaprc.js"></script>
+  <script type="text/javascript" src="javascripts/states/mapa.js"></script>
+</head>
+<body>
+  <div class="container" data-ng-controller="TelaPrincipalController">
+    <!-- topo -->
+    <div class="row">
+      <!-- barra -->
+      <div class="col-xs-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/mapa">Mapa de praças</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listas <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/listaprc">Praças</a></li>
+                    <li><a href="#/listact">Ações agendadas</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- barra alternativa a -->
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg" data-ng-show="!cuidador">
+        <div class="panel panel-info" data-ng-show="!cuidador">
+          <div class="panel-body">
+            <img src="images/logo-small.png" alt="Adote Uma Praça"/>
+            <a class="loginfb" data-ng-click="loginFB()">
+              <img alt="Login Facebook" src="images/loginfb.jpg"/>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- barra alternativa b -->
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg" data-ng-show="cuidador">
+        <div class="panel panel-info" data-ng-show="cuidador">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-xs-4">
+                <a data-ng-href="#/cuidador/{{cuidador.idcuidador}}">
+                  <img class="img-circle" src="http://graph.facebook.com/{{cuidador.idfacebook}}/picture?width=100&height=100">
+                  <br/>
+                  Olá, <a data-ng-href="#/cuidador/{{cuidador.idcuidador}}">{{cuidador.nomecuidador}}</a>!
+                </a>
+              </div>
+              <div class="col-xs-8 text-center">
+                <img src="images/logo.png" alt="Adote Uma Praça"/>
+                <a class="btn btn-warning" data-ng-click="logout()">Sair</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- miolo -->
+    <div class="row">
+      <!-- barra lateral a -->
+      <div class="hidden-xs col-sm-4 col-md-3">
+        <div class="panel panel-info">
+          <div class="panel-body text-center">
+            <a href="#/"><img src="images/logo.png" alt="Adote Uma Praça"/></a>
+          </div>
+        </div>
+        <div class="panel panel-info" data-ng-show="!cuidador">
+          <div class="panel-heading">
+            Conectar
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <a href="" data-ng-click="loginFB()">
+                  <img alt="Login Facebook" src="images/loginfb.jpg"/>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- barra lateral b -->
+        <div class="panel panel-info" data-ng-show="cuidador">
+          <div class="panel-heading">
+            Olá, <a data-ng-href="#/cuidador/{{cuidador.idcuidador}}">{{cuidador.nomecuidador}}</a>!
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <a data-ng-href="#/cuidador/{{cuidador.idcuidador}}">
+                  <img class="img-circle" src="http://graph.facebook.com/{{cuidador.idfacebook}}/picture?width=100&height=100">
+                </a>
+              </div>
+              <div class="col-xs-12 text-center">
+                <ul class="list-group">
+                  <li class="list-group-item"><a data-ng-click="logout()">Sair</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-12 text-center">
+                <ul class="list-group">
+                  <li class="list-group-item"><a href="#/mapa">Mapa de praças</a></li>
+                </ul>
+                <div class="btn-group" style="width:100%">
+                  <button type="button" class="btn btn-info dropdown-toggle"
+                  data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" style="width:100%">
+                  Listas <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" style="width:100%">
+                  <li><a href="#/listaprc">Praças</a></li>
+                  <li><a href="#/listact">Ações agendadas</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- dynamic content -->
+    <div class="col-xs-12 col-sm-8 col-md-9">
+      <div data-ui-view></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
